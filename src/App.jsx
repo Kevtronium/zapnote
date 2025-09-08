@@ -1,9 +1,15 @@
 import "./App.css";
+import NoteContainer from "./components/NoteContainer/NoteContainer";
+import { useState } from "react";
 
 function App() {
+  const [notes, setNotes] = useState(initialNotesData);
+
   return (
     <>
-      <h1>Hello</h1>
+      <div className="app">
+        <NoteContainer notes={notes} />
+      </div>
     </>
   );
 }
