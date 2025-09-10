@@ -1,0 +1,44 @@
+.note-creator {
+  background-color: #1f1f1f;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  max-width: 40vw;
+  margin: 0 auto 1rem;
+}
+
+.block-editor {
+  min-width: 35vw;
+}
+
+#note-title {
+  min-width: 35vw;
+  margin-bottom: 0.5rem;
+  background-color: #1f1f1f;
+  border-style: none;
+  width: 100%;
+  color: #cfcfcf;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-button {
+  background-color: #2c2c2c;
+  border-radius: 0.25rem;
+  color: #cfcfcf;
+  border-style: none;
+  padding: 0.5rem;
+}
+
+.close-button:hover {
+  border-style: solid;
+  font-weight: 600;
+}
+
+.close-button:active {
+  border-style: solid;
+  font-weight: 700;
+  background-color: #242323;
+}

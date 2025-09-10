@@ -5,7 +5,8 @@ import "@blocknote/mantine/style.css";
 import "@blocknote/core/fonts/inter.css";
 
 export default function Note({ title, content, id }) {
-  const editor = useCreateBlockNote({ initialContent: content });
+  let editorSettings = { initialContent: content };
+  const editor = useCreateBlockNote(editorSettings);
 
   return (
     <div className="note">
