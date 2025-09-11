@@ -1,6 +1,48 @@
 .note {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #1f1f1f;
   padding: 12px;
   border-radius: 8px;
   min-height: 225px;
+}
+
+.note-delete-button {
+  background-color: #2c2c2c;
+  border-radius: 0.25rem;
+  color: #cfcfcf;
+  border-style: none;
+  padding: 0.5rem;
+}
+
+.note-delete-button:hover {
+  border-style: solid;
+  font-weight: 600;
+}
+
+.note-delete-button:active {
+  border-style: solid;
+  font-weight: 700;
+  background-color: #242323;
+}
+
+.note-buttons-container {
+  opacity: 0%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.note-buttons-container:hover {
+  opacity: 100%;
+  animation: fade-in 0.35s ease-in forwards;
 }

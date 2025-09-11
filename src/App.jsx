@@ -17,11 +17,20 @@ function App() {
     });
   }
 
+  function handleDeleteNote(noteID) {
+    setNotes((oldNotes) => {
+      const newNotes = oldNotes.filter((note) => {
+        return note.id !== noteID;
+      });
+      return newNotes;
+    });
+  }
+
   return (
     <>
       <div className="app">
         <NoteCreator handleClose={handleClose} />
-        <NoteContainer notes={notes} />
+        <NoteContainer notes={notes} handleDeleteNote={handleDeleteNote} />
       </div>
     </>
   );

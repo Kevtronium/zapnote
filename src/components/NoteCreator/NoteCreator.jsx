@@ -73,9 +73,3 @@ export default function NoteCreator({ handleClose }) {
     </div>
   );
 }
-
-/*
-- When should NoteCreator creates a new note?
-1) When title is not empty string
-2) When content is not empty
-*/
