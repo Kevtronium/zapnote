@@ -1,4 +1,5 @@
 .note-creator {
+  position: relative;
   background-color: #1f1f1f;
   border-radius: 0.5rem;
   padding: 0.25rem;
@@ -41,4 +42,49 @@
   border-style: solid;
   font-weight: 700;
   background-color: #242323;
+}
+
+.list-buttons {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  top: 5%;
+  right: 12px;
+  gap: 12px;
+}
+
+.list-buttons button {
+  background-color: transparent;
+  border-radius: 0.25rem;
+  color: #cfcfcf;
+  border-style: none;
+  padding: 0.5rem;
+}
+
+.list-buttons button:hover {
+  cursor: pointer;
+  border-radius: 100%;
+  background-color: #272727;
+}
+
+.checklist-toolkit {
+  position: relative;
+}
+
+.checklist-toolkit-text {
+  visibility: hidden;
+  position: absolute;
+  background-color: #181717;
+  border-radius: 4px;
+  padding: 4px 8px;
+  width: 100px;
+  top: 100%;
+  left: 50%;
+  margin-left: -50px;
+  font-size: 0.75rem;
+}
+
+.checklist-toolkit:hover .checklist-toolkit-text {
+  visibility: visible;
+  transition-delay: 0.75s;
 }

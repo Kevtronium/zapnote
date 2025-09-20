@@ -4,6 +4,7 @@ import { useCreateBlockNote } from "@blocknote/react";
 import { BlockNoteView } from "@blocknote/mantine";
 import "@blocknote/mantine/style.css";
 import "@blocknote/core/fonts/inter.css";
+import checkboxImg from "../../assets/icons/checkbox-icon.svg";
 
 const initialNote = { title: "", content: [] };
 
@@ -22,6 +23,15 @@ export default function NoteCreator({ handleClose }) {
     setNote((oldNote) => {
       return { ...oldNote, title: e.target.value };
     });
+  }
+
+  function handleChecklistClick() {
+    setNote({ title: "", content: [{ type: "checkListItem", content: "" }] });
+
+    editor.updateBlock(editor.document[0], { type: "checkListItem" });
+    editor.setTextCursorPosition(editor.document[0].id);
+    editor.focus();
+    setActive(true);
   }
 
   function handleEditorChange(newEditor) {
@@ -51,12 +61,28 @@ export default function NoteCreator({ handleClose }) {
         onClick={handleClick}
         onChange={handleEditorChange}
       />
+      {!isActive && (
+        <div className="list-buttons">
+          <button className="checklist-toolkit" onClick={handleChecklistClick}>
+            <img
+              src={checkboxImg}
+              alt="checkbox with a checkmark in the middle"
+              width="16"
+              height="16"
+            />
+            <span className="checklist-toolkit-text">Create checklist</span>
+          </button>
+        </div>
+      )}
       <div className="buttons-container">
         {isActive && (
           <button
             className="close-button"
             onClick={() => {
-              if (note.content.length > 0 || note.title !== "") {
+              if (
+                (note.content.length > 0 && note.content[0].content !== "") ||
+                note.title !== ""
+              ) {
                 handleClose(note);
               }
               setActive(false);
